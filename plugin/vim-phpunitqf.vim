@@ -75,7 +75,7 @@ function! s:RunPHPUnitTests(arg)
     " Truncate current log file
     call system("> ".g:phpunit_tmpfile)
     "exe "!".g:phpunit_cmd." ".g:phpunit_args." ".s:args." ".g:phpunit_args_append." 2>&1 | tee ".g:phpunit_tmpfile
-    exe "!".g:phpunit_cmd." ".g:phpunit_args." ".s:args." ".g:phpunit_args_append".expand("%")." | tee ".g:phpunit_tmpfile
+    exe "!".g:phpunit_cmd." ".g:phpunit_args." ".s:args." ".g:phpunit_args_append.expand("%")." | tee ".g:phpunit_tmpfile
     python parse_test_output()
 endfunction
 
